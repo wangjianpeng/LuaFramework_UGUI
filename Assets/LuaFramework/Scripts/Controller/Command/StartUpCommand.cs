@@ -10,6 +10,11 @@ public class StartUpCommand : ControllerCommand {
         GameObject gameMgr = GameObject.Find("GlobalGenerator");
         if (gameMgr != null) {
             AppView appView = gameMgr.AddComponent<AppView>();
+            Debug.LogError("this is global config");
+        }
+        else
+        {
+            Debug.LogError("can't find the global  config");
         }
         //-----------------关联命令-----------------------
         AppFacade.Instance.RegisterCommand(NotiConst.DISPATCH_MESSAGE, typeof(SocketCommand));
